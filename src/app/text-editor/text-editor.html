@@ -1,0 +1,10 @@
+<h2>Text Editor</h2>
+
+<textarea [(ngModel)]="text" rows="5" cols="40"></textarea>
+<div>
+  <button (click)="toUpper()">UPPERCASE</button>
+  <button (click)="reverse()">Reverse Text</button>
+</div>
+
+<h3>Output:</h3>
+<p>{{ text }}</p>

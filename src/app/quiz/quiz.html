@@ -1,0 +1,40 @@
+<h2>Quiz</h2>
+
+<div>
+  <p>1. What is 2 + 2?</p>
+  <label><input type="radio" name="q1" value="a" [(ngModel)]="answers.q1"> 3</label>
+  <label><input type="radio" name="q1" value="b" [(ngModel)]="answers.q1"> 4</label>
+  <label><input type="radio" name="q1" value="c" [(ngModel)]="answers.q1"> 5</label>
+</div>
+
+<div>
+  <p>2. Which is a fruit?</p>
+  <label><input type="radio" name="q2" value="a" [(ngModel)]="answers.q2"> Apple</label>
+  <label><input type="radio" name="q2" value="b" [(ngModel)]="answers.q2"> Carrot</label>
+  <label><input type="radio" name="q2" value="c" [(ngModel)]="answers.q2"> Potato</label>
+</div>
+
+<div>
+  <p>3. Which one is an animal?</p>
+  <label><input type="radio" name="q3" value="a" [(ngModel)]="answers.q3"> Tree</label>
+  <label><input type="radio" name="q3" value="b" [(ngModel)]="answers.q3"> Rock</label>
+  <label><input type="radio" name="q3" value="c" [(ngModel)]="answers.q3"> Dog</label>
+</div>
+
+<button (click)="submit()">Submit</button>
+
+<div *ngIf="submitted">
+  <h3>Your score: {{ score }}/3</h3>
+
+  <div *ngIf="answers.q1 !== correct.q1">
+    Question 1 correct answer: 4
+  </div>
+
+  <div *ngIf="answers.q2 !== correct.q2">
+    Question 2 correct answer: Apple
+  </div>
+
+  <div *ngIf="answers.q3 !== correct.q3">
+    Question 3 correct answer: Dog
+  </div>
+</div>
